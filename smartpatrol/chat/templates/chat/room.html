@@ -1,0 +1,60 @@
+<!-- chat/templates/chat/room.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+</head>
+<body>
+    <textarea id="chat-log" cols="100" rows="20"></textarea><br>
+    <!-- message input -->
+    <input id="chat-message-input" type="text" size="100"><br>
+    <!-- button input -->
+    <input id="chat-message-submit" type="button" value="Send">
+    {{ room_name|json_script:"room-name" }}
+    <script>
+        <!-- storing the roomname as a json -->
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        <!-- creating a chat socket and its url -->
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+        );
+
+        <!-- this is a listener  that takes the message parse it into json then take the value and add a new line to it-->
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            // chat log is the message as listed in the textarea above
+            document.querySelector('#chat-log').value += (data.message + '\n');
+        };
+
+        <!-- alsoa listener that gives an error on close -->
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        <!-- the mouse is focused on the input -->
+        document.querySelector('#chat-message-input').focus();
+        <!-- on pressing enter (onkey release) -->
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return (execute the below code n press enter)
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        <!-- the click command will grab the message value and send it on the chatsocket  then reset the value to an empty string to show that message has been sent-->
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+</body>
+</html>
