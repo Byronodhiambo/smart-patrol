@@ -28,7 +28,7 @@
         <!-- this is a listener  that takes the message parse it into json then take the value and add a new line to it-->
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            // chat log is the message as listed in the textarea above
+            // chat log is the message window as listed in the textarea above
             document.querySelector('#chat-log').value += (data.message + '\n');
         };
 
