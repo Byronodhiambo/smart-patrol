@@ -72,6 +72,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'smartpatrol.wsgi.application'
 ASGI_APPLICATION = 'smartpatrol.asgi.application'
 
+# A channel layer is a kind of communication system. It allows multiple consumer instances to talk with each other, and with other parts of Django.
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
