@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Welcome home</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'accounts/favicon.ico' %}" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'accounts/styles.css' %}" rel="stylesheet" type="text/css" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="background-color: #f4623a !important">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{% url 'accounts:homepage' %}">Smart Patrol</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+
+                      <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Messaging</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'report' %}">Reporting</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'help' %}">Get Help</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="resume-section" id="profile">
+          <div class="main-container">
+
+          </div>
+          <img src="" alt="">
+                <div class="resume-section-content">
+                  <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{prof_pic.url}}" alt="..." /></span>
+                    <h1 class="mb-0">
+                        {{user.first_name}}
+                        <span class="text-primary">{{user.last_name}}</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        Phone number : {{prof_phone}} · Area of residence : {{prof_estate}} ·<br> Area assigned : {{prof_assigned}} · email
+                        <a href="https://mail.google.com">{{user.email}}</a> <br><br><br> duties and responsibilities
+                    </div>
+                    <p class="lead mb-5">Inspect and patrol premises regularly <br>
+                        Monitor property entrance<br>
+                        Authorize entrance of people and vehicles<br>
+                        Report any suspicious behaviors and happenings<br>
+                        Secure all exits, doors and windows<br>
+                        Monitor surveillance cameras<br>
+                        Respond to alarms and react in a timely manner<br>
+                        Provide assistance to people in need<br>
+                        Submit reports of daily surveillance activity<br>
+                        Submit reports of every suspicious action<br>
+                        <!-- I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews, iterative approaches to corporate strategy and foster collaborative thinking to further the overall value proposition. -->
+                      </p>
+                    <div class="social-icons">
+                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+
+
+
+
+
+<!-- Bootstrap core JS-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- SimpleLightbox plugin JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="{% static 'accounts/scripts.js' %}"></script>
+      <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+      <!-- * *                               SB Forms JS                               * *-->
+      <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+      <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+      <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+
+</body>
+
+</html>
