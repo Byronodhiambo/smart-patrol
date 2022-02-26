@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Welcome home</title>
+        <!-- <link href="{% static 'chat/style.css' %}" rel="stylesheet" type="text/css" /> -->
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'chat/favicon.ico' %}" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" integrity="sha256-F3Xeb7IIFr1QsWD113kV2JXaEbjhsfpgrKkwZFGIA4E=" crossorigin
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'chat/styles.css' %}" rel="stylesheet" type="text/css" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="background-color: #f4623a !important">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{% url 'accounts:homepage' %}">Smart Patrol</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+
+                        <li class="nav-item"><a class="nav-link" href="{% url 'chat:index'%}">Messaging</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'report'%}">Reporting</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'help'%}">Get Help</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid">
+            <!-- Row -->
+            <div class="row">
+                <div class="col-xl-12 pa-0">
+                    <div class="faq-search-wrap bg-teal-light-3">
+                        <div class="container">
+                          <h1 class="display-5 text-white mb-20">Ask a question or browse by category below.</h1>
+                        </div>
+                    </div>
+                    <div class="container mt-sm-60 mt-30">
+                        <div class="hk-row">
+                            <div class="col-xl-4">
+                                <div class="card">
+                                    <h6 class="card-header">
+                                                    Category
+                                                </h6>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex align-items-center active">
+                                            <a href="#terms"><i class="ion ion-md-sunny mr-15"></i>Terms &amp; conditions<span class="badge badge-light badge-pill ml-15">04</span></a>
+                                        </li>
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <a href="#privacy"><i class="ion ion-md-unlock mr-15"></i>Privacy policy<span class="badge badge-light badge-pill ml-15">03</span></a>
+                                        </li>
+
+                                        <li class="list-group-item d-flex align-items-center">
+                                            <a href="#documentation"><i class="ion ion-md-filing mr-15"></i>Documentation<span class="badge badge-light badge-pill ml-15">05</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-8">
+                                <div class="card card-lg">
+                                    <h3 class="card-header border-bottom-0" id="terms">
+                                                    Terms and Conditions
+                                                </h3>
+                                    <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between activestate" id="headingOne">
+                                                <a role="button" data-toggle="collapse" href="#collapse_1i" data-target="#collapse_1i" aria-expanded="true" aria-controls="collapse_1i">Issuance of user data</a>
+                                            </div>
+                                            <div id="collapse_1i" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_2" role="tabpanel">
+                                                <div class="card-body pa-15">In order to access our Resources, you may be required to provide certain information about yourself as part of the registration process, or as part of your ability to use the Resources. You agree that any information you provide will always be accurate, correct, and up to date and won’t provide false or inaccurate information when registering an account.</div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2i" aria-expanded="true">Confidentiality of login credentials</a>
+                                            </div>
+                                            <div id="collapse_2i" class="collapse show" data-parent="#accordion_2">
+                                                <div class="card-body pa-15">You are responsible for maintaining the confidentiality of any login information associated with any account you use to access our Resources. Accordingly, you are responsible for all activities that occur under your account(s)</div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3i" aria-expanded="false">Acces of resources</a>
+                                            </div>
+                                            <div id="collapse_3i" class="collapse show" data-parent="#accordion_2">
+                                                <div class="card-body pa-15">Accessing any of our Resources by any means other than through the means we provide, is strictly prohibited. You specifically agree not to access any of our Resources through any automated, unethical or unconventional means.</div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_4i" aria-expanded="false">Losses by the user</a>
+                                            </div>
+                                            <div id="collapse_4i" class="collapse show" data-parent="#accordion_2">
+                                                <div class="card-body pa-15">You are solely responsible for any consequences, losses, or damages that we may directly or indirectly incur or suffer due to any unauthorized activities conducted by you, as explained above, and may incur criminal or civil liability.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="card card-lg">
+                                        <h3 class="card-header border-bottom-0" id="privacy">
+                                                        Privacy policy
+                                                    </h3>
+                                        <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between activestate">
+                                                    <a role="button" data-toggle="collapse" href="#collapse_1i" aria-expanded="true">Introduction</a>
+                                                </div>
+                                                <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                                    <div class="card-body pa-15">Smart patrol is committed to keeping any and all personal information collected from the individuals that visit our website and make use of our online facilities and services accurate, confidential, secure and private. Our privacy policy has been designed and created to ensure those affiliated with of our commitment and realization of our obligation of meeting the existing privacy standards. Our Privacy Policy is designed to help you understand how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our Service.</div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2i" aria-expanded="true">What information we collect</a>
+                                                </div>
+                                                <div id="collapse_2i" class="collapse show" data-parent="#accordion_2">
+                                                    <div class="card-body pa-15">Known as “personal information” or “personally identifiable information,” regulated data typically includes anything that can be used to identify an individual, and is not limited to a user’s name. We collect “Non-Personal Information” and “Personal Information.” Non-Personal Information includes information that cannot be used to personally identify you, such as anonymous usage data,the general demographic information we may collect, referring/exit pages and URLs, platform types, preferences you submit and preferences that are generated based on the data you submit and the number of clicks. Personal Information includes information from you when you register on our site, place an order, fill out a form or navigate our site. You may be asked to enter your: name, e-mail address, mailing address, phone number or credit card information. You may, however, visit our site anonymously.</div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3i" aria-expanded="false">Uses of the information</a>
+                                                </div>
+                                                <div id="collapse_3i" class="collapse show " data-parent="#accordion_2">
+                                                    <div class="card-body pa-15">Except as otherwise stated in this Privacy Policy, we do not sell, trade, rent or otherwise share for marketing purposes your Personal Information with third parties without your consent. Your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the purchased product or service requested</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="card card-lg">
+                                        <h3 class="card-header border-bottom-0" id="documentation">
+                                                        Documentation
+                                                    </h3>
+                                        <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between activestate">
+                                                    <a role="button" data-toggle="collapse" href="#collapse_1i" aria-expanded="true">User registration</a>
+                                                </div>
+                                                <div id="collapse_1i" class="collapse show" data-parent="#accordion_2" role="tabpanel">
+                                                    <div class="card-body pa-15">Before using the application, make sure to have contacted your supervisor for registration.Note that yopu can signup on your own but there are certain information tht must be entered by your supervisor with your assistance</div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2i" aria-expanded="true">Cannot login to the system</a>
+                                                </div>
+                                                <div id="collapse_2i" class="collapse show" data-parent="#accordion_2">
+                                                    <div class="card-body pa-15">If you cannot login the system please confirm that you got you are using the right username and password. If you still cannot acces the system, contact your supervisor</div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3i" aria-expanded="false">Messaging</a>
+                                                </div>
+                                                <div id="collapse_3i" class="collapse show" data-parent="#accordion_2">
+                                                    <div class="card-body pa-15">In using the system one can send or view messages from peers or supervisor. one can only interact with messages from only the groups they were assigned to by their supervisors. it is the supervisor that assigns groups to security guards at registration according to the assignment areas</div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_4i" aria-expanded="false">Reporting incidents</a>
+                                                </div>
+                                                <div id="collapse_4i" class="collapse show" data-parent="#accordion_2">
+                                                    <div class="card-body pa-15">The website provides an interface through which security guards can do their daily routine reports. yopu just have to click on the report button and it takes you to the reporting interface. You then follow the form prompt in doing your report, all the reports including emergency reports, daily reports should be forwarded through the interface</div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header d-flex justify-content-between">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_5i" aria-expanded="false">Profile</a>
+                                                </div>
+                                                <div id="collapse_5i" class="collapse show" data-parent="#accordion_2">
+                                                    <div class="card-body pa-15">Each and every security guard has a profile, this was recorded at your employment and registration process this includes, your profile picture, area of residence, name, phone number e.t.c . All the profile information can be seen through the profile page, an error should be reported to the supervisor and fixed. </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Row -->
+
+        </div>
+      </body>
+</html>
