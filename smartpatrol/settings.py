@@ -16,7 +16,6 @@ import os
 BASE_DIR = os.path.join(os.path.dirname(__file__))
 
 
-
 # Quick-start development settings - unsuitable for production
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -44,8 +43,6 @@ INSTALLED_APPS = [
     'accounts'
 
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
