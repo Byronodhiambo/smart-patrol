@@ -86,12 +86,23 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'smartpatrol',  
+        'USER': 'byron',  
+        'PASSWORD': '1234',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306' 
+         
+    }  
+}  
 
 
 # Password validation
@@ -136,3 +147,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+TORTOISE_ORM = {
+        "db_url": "mysql://byron:1234@localhost:3306/smartpatrol?charset=utf8mb4",
+        "modules": {
+            "models": ["chat.tortoise_models", "aerich.models"]
+
+            },
+    }
