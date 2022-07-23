@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 
 BASE_DIR = os.path.join(os.path.dirname(__file__))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.join(os.path.dirname(__file__))
 SECRET_KEY = '02=j0@%!d^6^7fdah&$+jt(5*_640dy$03k_u#8hlg5au(lc@r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +42,9 @@ INSTALLED_APPS = [
 
     'channels',
     'chat',
-    'accounts'
+    'accounts',
+
+    'whitenoise.runserver_nostatic'
 
 ]
 
@@ -55,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'smartpatrol.urls'
@@ -92,6 +97,8 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -128,6 +135,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'smartpatrol/static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ASGI_APPLICATION = "smartpatrol.routing.application"
 CHANNEL_LAYERS = {
