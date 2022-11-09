@@ -24,7 +24,7 @@ BASE_DIR = os.path.join(os.path.dirname(__file__))
 SECRET_KEY = '02=j0@%!d^6^7fdah&$+jt(5*_640dy$03k_u#8hlg5au(lc@r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -132,6 +132,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'smartpatrol/static')]
