@@ -17,7 +17,6 @@ import dj_database_url
 BASE_DIR = os.path.join(os.path.dirname(__file__))
 
 
-
 # Quick-start development settings - unsuitable for production
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -38,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
     'channels',
     'chat',
     'accounts',
@@ -47,8 +44,6 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic'
 
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,20 +81,26 @@ WSGI_APPLICATION = 'smartpatrol.wsgi.application'
 # Database
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'smartpatrol',
+#         'USER': 'byron',
+#         'PASSWORD': '1234',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'smartpatrol',
-        'USER': 'byron',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'yourdatabasename.db'),
     }
 }
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
