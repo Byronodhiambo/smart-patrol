@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    container_name: 'db'
+    image: mysql:8
+    ports:
+      - '3307:3306'
+    environment:
+      - MYSQL_DATABASE='smartpatrol'
+      - MYSQL_USER='byron'
+      - MYSQL_PASSWORD='1234'
+      - MYSQL_ROOT_PASSWORD='1234'
+      - MYSQL_HOST=''
+    volumes:
+      - /tmp/app/mysqld:/var/run/mysqld
+      - ./db:/var/lib/mysql
+  redis:
+    container_name: 'redis'
+    image: 'redis:5.0'
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redisdata:/data'
+  
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /tmp/app/mysqld:/run/mysqld
+    depends_on:
+      - db
+      - redis
