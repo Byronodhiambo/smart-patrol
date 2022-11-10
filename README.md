@@ -1,5 +1,8 @@
 # smart-patrol
 
+smart-patrol is a secure(AES encrypted) security guards communication application that allows guards send and receive text and images.
+It also allows for incident reporting and guards profile management.
+
 home page
 
 ![1](https://user-images.githubusercontent.com/31854840/133444857-7e6597c5-8b92-445e-949c-5902f700c1f6.png)
