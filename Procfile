@@ -1,0 +1,1 @@
+web: gunicorn smartpatrol.wsgi --log-file -
