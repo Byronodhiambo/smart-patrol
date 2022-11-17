@@ -25,6 +25,7 @@ SECRET_KEY = '02=j0@%!d^6^7fdah&$+jt(5*_640dy$03k_u#8hlg5au(lc@r'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://8000-cs-860194767488-default.cs-europe-west1-iuzs.cloudshell.dev']
 
 
 # Application definition
