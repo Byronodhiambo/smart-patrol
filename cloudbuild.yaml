@@ -2,7 +2,7 @@ steps:
 - name: 'docker/compose:1.19.0'
   args: ['up', '-d']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/development-03717872/smartpatrol']
+  args: ['build', '-t', 'gcr.io/development-03717872/github_byronodhiambo_smartpatrol:51465af95597e85e3859293fd9a9640f71662717', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['tag', 'workspace_app:latest', 'gcr.io/development-03717872/github_byronodhiambo_smartpatrol:51465af95597e85e3859293fd9a9640f71662717']
+  args: ['push', 'gcr.io/development-03717872/github_byronodhiambo_smartpatrol:51465af95597e85e3859293fd9a9640f71662717']
 images: ['gcr.io/development-03717872/github_byronodhiambo_smartpatrol:51465af95597e85e3859293fd9a9640f71662717']
