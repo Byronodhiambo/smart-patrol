@@ -14,63 +14,13 @@ spec:
     spec:
       containers:
         - name: smartpatrol
-          image: cr.io/development-03717872/devops-image:v0.1
+          image: gcr.io/development-03717872/smartpatrol
           resources:
             limits:
               memory: "128Mi"
               cpu: "500m"
           ports:
             - containerPort: 8080
-
-
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: smartpatrol-db
-spec:
-  selector:
-    matchLabels:
-      app: smartpatrol-db
-  template:
-    metadata:
-      labels:
-        app: smartpatrol-db
-    spec:
-      containers:
-        - name: smartpatrol-db
-          image: <Image>
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 3306
-
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: redis
-spec:
-  selector:
-    matchLabels:
-      app: redis
-  template:
-    metadata:
-      labels:
-        app: redis
-    spec:
-      containers:
-        - name: redis
-          image: <Image>
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 6379
-
 
 ---
 apiVersion: v1
