@@ -5,8 +5,4 @@ steps:
   args: ['build', '-t', 'gcr.io/development-03717872/github_byronodhiambo_smartpatrol:51465af95597e85e3859293fd9a9640f71662717', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/development-03717872/github_byronodhiambo_smartpatrol:51465af95597e85e3859293fd9a9640f71662717']
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
-timeout: '1600s'
 images: ['gcr.io/development-03717872/github_byronodhiambo_smartpatrol:51465af95597e85e3859293fd9a9640f71662717']
